@@ -1,4 +1,5 @@
-# EV3-SPIKE_Sensor_Adapter-Staff
+
+# EV3 and SPIKE Sensor Adapter Staff
 This Block allows you to connect LEGO SPIKE Prime/Robot Inventor sensors to LEGO EV3 with adapter board.
 
 ## How it works
@@ -6,10 +7,29 @@ The EV3 using UART protocol to communicate with sensors, and SPIKE Prime/Robot I
 
 ## Hardware
 All EV3/SPIKE/RI Sensors (except EV3 Touch) have small MCUs (STM8) running inside it, EV3 running with 5 V standard, SPIKE/RI running with 3.3 V standard, and MCU in sensors support 2.95 V to 5.5 V, and seems there is no LDO on sensor's PCB, Power is directly connect to MCU's VDD. So that we can build a simple adapter or jump wire to connect sensors and hub.
+| Sensor | MCU |
+|--|--|
+| EV3 Color | STM8S103F3 |
+| EV3 Ultra Sonic | STM8S103F3 |
+| EV3 Gyro | STM8S103F3 |
+| EV3 IR | STM8S103F3 |
+| SPIKE Color | STM8S105K6 |
+| SPIKE Ultra Sonic | STM8S105K6 |
+| SPIKE Force | STM8S103F3 |
 
 ### SPIKE/RI Sensors Connect to EV3:
 Due to EV3 using Auto-ID to identify sensors, Pin 1 need lower than 100 mV, so EV3 side Pin 1 need short to ground (Pin 3) (In EV3 sensors they do the same things), but some SPIKE/RI sensor's component (Color, Ultra Sonic LEDs) using Pin 1 to get more power, so that SPIKE/RI side Pin 1 need short to VCC (Pin 4). Other Pins just connect it from side to side. (Pin6<->Pin6, Pin5<->Pin5...).
 
+    SPIKE/RI Sensor Pins <-----> EV3 Pins
+    Pin 2 (M2 ) <--------------> Pin 2 Auto ID
+    Pin 3 (GND) <--------------> Pin 3 GND
+    Pin 4 (Vin) <--------------> Pin 4 5V
+    Pin 5 (Rx ) <--------------> Pin 5 Tx
+    Pin 6 (Tx ) <--------------> Pin 6 Rx
+    
+    Pin 1 (M1 ) <------> 5V   |  Pin 1 (ADC) <------> GND
+   
+   You can cut the wire and use breadboard to connect, or use the PCB in attachment, or buy the adapter from Mindsensors.com.
 
 ### EV3 Sensors Connect to SPIKE/RI Hub:
 Because EV3 Sensor can work with 3.3v, so just simply connect Pin 3, 4, 5, 6 (Pin 1 and 2 NC), than SPIKE/RI Hub can read value from EV3!
