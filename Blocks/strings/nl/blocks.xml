@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorStrings>
+  <PolyGroups ModuleName="SPIKE Prime Sensors">
+    <PolyGroup Name="OFDL SPIKE Color Sensor" DisplayName="SPIKE Color Sensor">
+      <Parameter Name="Port" DisplayName="Port"></Parameter>
+      <Parameter Name="Color" DisplayName="Color"></Parameter>
+      <Parameter Name="Value" DisplayName="Value"></Parameter>
+      <Parameter Name="R" DisplayName="Red"></Parameter>
+      <Parameter Name="G" DisplayName="Green"></Parameter>
+      <Parameter Name="B" DisplayName="Blue"></Parameter>
+      <Parameter Name="H" DisplayName="Hue"></Parameter>
+      <Parameter Name="S" DisplayName="Saturation"></Parameter>
+      <Parameter Name="V" DisplayName="Value"></Parameter>
+      <Parameter Name="Min" DisplayName="Min"></Parameter>
+      <Parameter Name="Max" DisplayName="Max"></Parameter>
+	  
+      <Block Mode="MeasureColor" DisplayName="Read Color"></Block>
+      <Block Mode="MeasureReflectedLight" DisplayName="Read Reflected Light"></Block>
+      <Block Mode="MeasureAmbientLight" DisplayName="Read Ambient Light"></Block>
+      <Block Mode="MeasureRawLight" DisplayName="Read Raw Reflected Light"></Block>
+      <Block Mode="MeasureRGB" DisplayName="Read RGB Color"></Block>
+      <Block Mode="MeasureHSV" DisplayName="Read HSV Color"></Block>
+      <Block Mode="MeasureSHSV" DisplayName="Read SHSV Color"></Block>
+      <Block Mode="MeasureNorReflectedLight" DisplayName="Read Normalize Value"></Block>
+      <Block Mode="ConfigNorReflectedLight" DisplayName="Sensor Normalize Configuration"></Block>
+    </PolyGroup>
+	<PolyGroup Name="OFDL SPIKE US Sensor" DisplayName="SPIKE UltraSonic Sensor">
+      <Parameter Name="Port" DisplayName="Port"></Parameter>
+      <Parameter Name="Value" DisplayName="Value"></Parameter>
+	  
+      <Block Mode="MeasureDISTL" DisplayName="Read Distance Long (cm)"></Block>
+      <Block Mode="MeasureDISTS" DisplayName="Read Distance Short (cm)"></Block>
+      <Block Mode="MeasureTRAW" DisplayName="Read Raw Time"></Block>
+      <!--<Block Mode="MeasureADRAW" DisplayName="Read Raw AD"></Block>-->
+    </PolyGroup>
+	<PolyGroup Name="OFDL SPIKE Force Sensor" DisplayName="SPIKE Force Sensor">
+      <Parameter Name="Port" DisplayName="Port"></Parameter>
+      <Parameter Name="Value" DisplayName="Value"></Parameter>
+      <Parameter Name="State" DisplayName="State"></Parameter>
+	  
+      <Block Mode="MeasureTOUCH" DisplayName="Read Touch State"></Block>
+      <Block Mode="MeasureFORCE" DisplayName="Read Pressure (Newton)"></Block>
+      <Block Mode="MeasureFPEAK" DisplayName="Read Peak Pressure"></Block>
+      <Block Mode="MeasureFRAW" DisplayName="Read Raw Pressure"></Block>
+      <Block Mode="MeasureFPRAW" DisplayName="Read Peak Raw Pressure"></Block>
+    </PolyGroup>
+  </PolyGroups>
+</EditorStrings>

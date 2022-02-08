@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorDefinitions>
+	<PolyGroups ModuleName="SPIKE Prime Sensors" ModuleVersion="1.0 (By OFDL.Dev)">
+		<!--SPIKE Color-->
+		<PolyGroup Name="OFDL SPIKE Color Sensor" BlockFamily="Sensor">
+			<Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+			<Parameter Name="Color" Direction="Output" DataType="Single" Identification="builtin://Identification_MeasuredColor.png"/>
+			<Parameter Name="Value" Direction="Output" DataType="Single" Identification="builtin://Identification_MeasuredLight.png"/>
+			<Parameter Name="R" Direction="Output" DataType="Single" Identification="Identification_Red.png"/>
+			<Parameter Name="G" Direction="Output" DataType="Single" Identification="Identification_Green.png"/>
+			<Parameter Name="B" Direction="Output" DataType="Single" Identification="Identification_Blue.png"/>
+			<Parameter Name="H" Direction="Output" DataType="Single" Identification="Identification_H.png"/>
+			<Parameter Name="S" Direction="Output" DataType="Single" Identification="Identification_S.png"/>
+			<Parameter Name="V" Direction="Output" DataType="Single" Identification="Identification_V.png"/>
+			<Parameter Name="Min" Direction="Input" DataType="Single" DefaultValue="0" Identification="builtin://Identification_Threshold_Equal_-2.png"/>
+			<Parameter Name="Max" Direction="Input" DataType="Single" DefaultValue="1024" Identification="builtin://Identification_Threshold_Less_+2.png"/>
+			<Block>
+				<Mode>MeasureColor</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureColor.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Color" />
+				<PaletteInfo Weight="0.5" />
+			</Block>
+			<Block>
+				<Mode>MeasureReflectedLight</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureReflectedLight.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value"/>
+			</Block>
+			<Block>
+				<Mode>MeasureAmbientLight</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureAmbientLight.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value"/>
+			</Block>
+			<Block>
+				<Mode>MeasureRawLight</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureRawLight.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value"/>
+			</Block>
+			<Block>
+				<Mode>MeasureRGB</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureRGB.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="R"/>
+				<ParameterReference Name="G"/>
+				<ParameterReference Name="B"/>
+				<ParameterReference Name="I"/>
+			</Block>
+			<Block>
+				<Mode>MeasureHSV</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureHSV.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="H"/>
+				<ParameterReference Name="S"/>
+				<ParameterReference Name="V"/>
+			</Block>
+			<Block>
+				<Mode>MeasureSHSV</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureSHSV.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="H"/>
+				<ParameterReference Name="S"/>
+				<ParameterReference Name="V"/>
+			</Block>
+			<Block>
+				<Mode>MeasureNorReflectedLight</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_MeasureNorReflectedLight.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value"/>
+			</Block>
+			<Block>
+				<Mode>ConfigNorReflectedLight</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-COL_ConfigNorReflectedLight.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Min"/>
+				<ParameterReference Name="Max"/>
+			</Block>
+		</PolyGroup>
+		<!--SPIKE UltraSonic-->
+		<PolyGroup Name="OFDL SPIKE US Sensor" BlockFamily="Sensor">
+			<Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+			<Parameter Name="Value" Direction="Output" DataType="Single" Identification="builtin://Identification_Numeric.png"/>
+			<Block>
+				<Mode>MeasureDISTL</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-US_MeasureDISTL.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+				<PaletteInfo Weight="0.5" />
+			</Block>
+			<Block>
+				<Mode>MeasureDISTS</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-US_MeasureDISTS.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<Block>
+				<Mode>MeasureTRAW</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-US_MeasureTRAW.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<!--<Block>
+				<Mode>MeasureADRAW</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-US_MeasureADRAW.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>-->
+		</PolyGroup>
+		<!--SPIKE Force-->
+		<PolyGroup Name="OFDL SPIKE Force Sensor" BlockFamily="Sensor">
+			<Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+			<Parameter Name="State" Direction="Output" DataType="Boolean" Identification="builtin://Identification_Touch.png"/>
+			<Parameter Name="Value" Direction="Output" DataType="Single" Identification="builtin://Identification_Numeric.png"/>
+			<Block>
+				<Mode>MeasureTOUCH</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-FC_MeasureTOUCH.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="State" />
+				<PaletteInfo Weight="0.5" />
+			</Block>
+			<Block>
+				<Mode>MeasureFORCE</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-FC_MeasureFORCE.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<Block>
+				<Mode>MeasureFPEAK</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-FC_MeasureFPEAK.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<Block>
+				<Mode>MeasureFRAW</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-FC_MeasureFRAW.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<Block>
+				<Mode>MeasureFPRAW</Mode>
+				<Reference Type="VILib" Name="OFDL_SPIKE-FC_MeasureFPRAW.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+		</PolyGroup>
+	</PolyGroups>
+</EditorDefinitions>

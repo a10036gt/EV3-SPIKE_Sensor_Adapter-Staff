@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="3" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="3" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Min" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="0" />
+            <DataItem Name="Max" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Port" Id="n19" Bounds="1197 217 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w26" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Min" Id="n3" Bounds="1281 266 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w21" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Max" Id="n4" Bounds="1281 301 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w23" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <QuotientAndRemainder Id="n5" Terminals="x\-y\*floor\(x\/y\)=w6, y=w9, x=w26" TopLeft="1295 217" />
+                <Wire Id="w6" Joints="N(n5:x\-y\*floor\(x\/y\)) h(42) v(14) N(b14:n0)" />
+                <Literal Id="n9" Terminals="Out=w9" Bounds="1246 238 28 14" Interpretation="Exact" DataType="Double">10</Literal>
+                <Wire Id="w9" Joints="N(n9:Out) h(14) v(-7) N(n5:y)" />
+                <CaseStructure Id="n0" Bounds="1372 105 469 266" DataType="Int32" UserSelectorBounds="175.997 0 117.007 14" Selected="D19" Default="d1">
+                    <CaseStructure.Case Id="d1" Bounds="7 7 455 252" Pattern="1, Default">
+                        <ConfigurableMethodCall Id="n8" Bounds="70 77 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s1Min">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w5" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" Wire="w7" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <Wire Id="w5" Joints="N(b21:d1) h(56) v(-30) N(n8:valueIn)" />
+                        <ConfigurableMethodCall Id="n6" Bounds="287 77 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s1Max">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w8" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" Wire="w7" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <Wire Id="w7" Joints="N(n8:SequenceOut) N(n6:SequenceIn)" />
+                        <Wire Id="w8" Joints="N(b23:d1) h(273) v(-65) N(n6:valueIn)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D17" Bounds="7 7 455 252" Pattern="2">
+                        <ConfigurableMethodCall Id="n11" Bounds="91 70 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s2Min">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w7" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" Wire="w6" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <ConfigurableMethodCall Id="n10" Bounds="287 70 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s2Max">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w8" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" Wire="w6" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <Wire Id="w6" Joints="N(n11:SequenceOut) N(n10:SequenceIn)" />
+                        <Wire Id="w7" Joints="N(b21:D17) h(73) v(-37) N(n11:valueIn)" />
+                        <Wire Id="w8" Joints="N(b23:D17) h(7) v(2) h(224) v(-72) h(42) v(-2) N(n10:valueIn)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D18" Bounds="7 7 455 252" Pattern="3">
+                        <ConfigurableMethodCall Id="n15" Bounds="98 56 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s3Min">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w7" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" Wire="w6" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <ConfigurableMethodCall Id="n14" Bounds="252 56 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s3Max">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w8" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" Wire="w6" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <Wire Id="w6" Joints="N(n15:SequenceOut) N(n14:SequenceIn)" />
+                        <Wire Id="w7" Joints="N(b21:D18) h(80) v(-51) N(n15:valueIn)" />
+                        <Wire Id="w8" Joints="N(b23:D18) h(238) v(-86) N(n14:valueIn)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D19" Bounds="7 7 455 252" Pattern="4">
+                        <ConfigurableMethodCall Id="n19" Bounds="70 56 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s4Min">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w6" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <ConfigurableMethodCall Id="n18" Bounds="217 56 101 91" Target="X3\.Lib:GlobalSetSingle">
+                            <ConfigurableMethodTerminal ConfiguredValue="OFDL_Col_s4Max">
+                                <Terminal Id="name" Direction="Input" DataType="String" Hotspot="0.5 1" Bounds="0 0 0 0" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="valueIn" Direction="Input" Wire="w7" DataType="Single" Hotspot="0 0.5" Bounds="0 47 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <ConfigurableMethodTerminal ConfiguredValue="0">
+                                <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            </ConfigurableMethodTerminal>
+                            <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 33 18 18" />
+                            <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="83 33 18 18" />
+                        </ConfigurableMethodCall>
+                        <Wire Id="w6" Joints="N(b21:D19) h(52) v(-51) N(n19:valueIn)" />
+                        <Wire Id="w7" Joints="N(b23:D19) h(199) v(-86) N(n18:valueIn)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b14" Terminals="n0=w6, d1, D17, D18, D19" TopLeft="0 126" />
+                    <CaseStructure.Tunnel Id="b21" Terminals="n0=w21, d1=w5, D17=w7, D18=w7, D19=w6" TopLeft="0 161" />
+                    <CaseStructure.Tunnel Id="b23" Terminals="n0=w23, d1=w8, D17=w8, D18=w8, D19=w7" TopLeft="0 196" />
+                </CaseStructure>
+                <Wire Id="w21" Joints="N(n3:Value) N(b21:n0)" />
+                <Wire Id="w23" Joints="N(n4:Value) N(b23:n0)" />
+                <Wire Id="w26" Joints="N(n19:Value) N(n5:x)" />
+                <Comment Bounds="1071 84 217 70" SizeMode="User" AttachStyle="Free">
+                    <Content>Data : Sensor max and min value
+Var   : OFDL_Col_sXmin or max
+
+2020.01.11</Content>
+                </Comment>
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
