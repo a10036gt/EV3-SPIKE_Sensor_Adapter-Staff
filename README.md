@@ -1,6 +1,6 @@
 
 # EV3 and SPIKE Sensor Adapter Staff
-![](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Image1.JPG =700x)
+![](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Image1.JPG)
 This Block allows you to connect LEGO SPIKE Prime/Robot Inventor sensors to LEGO EV3 with adapter board.
 
 ## How it works
@@ -76,7 +76,7 @@ Here is the mode and info of EV3 Sensors: [EV3 Typedata.rcf](https://github.com/
 Here is the mode and info of SPIKE/RI Sensors: [SPIKE and Boost sensor modes](https://hubmodule.readthedocs.io/en/latest/sensors/#mode)
 
 ## Other use, Access EV3 Linux Console:
-![](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Image2.JPG =700x)
+![](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Image2.JPG)
 
 ## Documents used
  - [PyBricks - LEGO Powered Up UART Protocol](https://github.com/pybricks/technical-info/blob/master/uart-protocol.md)
