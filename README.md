@@ -29,7 +29,9 @@ Due to EV3 using Auto-ID to identify sensors, Pin 1 need lower than 100 mV, so E
     
     Pin 1 (M1 ) <------> 5V   |  Pin 1 (ADC) <------> GND
    
-   You can cut the wire and use breadboard to connect, or use the PCB in attachment, or buy the adapter from Mindsensors.com.
+   You can cut the wire and use breadboard to connect, or use the PCB in attachment, or buy the adapter from mindsensors.com.
+  ![Sample Adapter PCB](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Adapter%20PCB/Adapter%20PCB_v1.PNG)
+This is the simple PCB layout of adapter, I use [EasyEDA](https://easyeda.com/) to design this PCB and I think it's not well done because I use auto-layout :)), but it works fine, The EV3 and LPF2 connector can buy via China Aliexpress.
 
 ### EV3 Sensors Connect to SPIKE/RI Hub:
 Because EV3 Sensor can work with 3.3v, so just simply connect Pin 3, 4, 5, 6 (Pin 1 and 2 NC), than SPIKE/RI Hub can read value from EV3!
