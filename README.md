@@ -1,6 +1,8 @@
 
 # EV3 and SPIKE Sensor Adapter Staff
 ![](https://raw.githubusercontent.com/a10036gt/EV3-SPIKE_Sensor_Adapter-Staff/main/Image1.JPG)
+[YouTube Video](https://www.youtube.com/watch?v=kYKOY--8tYQ)
+
 This Block allows you to connect LEGO SPIKE Prime/Robot Inventor sensors to LEGO EV3 with adapter board.
 
 ## How it works
